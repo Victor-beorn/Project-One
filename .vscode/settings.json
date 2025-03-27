@@ -1,0 +1,10 @@
+{
+  "editor.suggest.showStatusBar": true,
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.iconClickBehavior": "focus",
+  "cSpell.words": [
+    "Alves",
+    "mudou",
+    "titulo"
+  ]
+}

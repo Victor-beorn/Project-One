@@ -1,0 +1,18 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  min-width: 100vh;
+  background-color: #eee;
+  padding: 30px;
+}
+
+.button-container{
+  min-height: 60px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.input-container{
+  margin-bottom: 30px;
+}
+
