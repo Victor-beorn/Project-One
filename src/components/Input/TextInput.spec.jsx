@@ -22,4 +22,11 @@ describe('<TextInput />', () => {
         expect(fn).toHaveBeenCalledTimes(value.length);
 
     });
+
+    it('should match snapshot', () => {
+        const fn = jest.fn();
+        const {container} = render(<TextInput handleChange={fn} searchValue={'testando'}/>);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });
