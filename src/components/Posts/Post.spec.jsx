@@ -28,14 +28,17 @@ describe('<Posts />', () => {
         expect(screen.getAllByRole('img', { name: /title 2/i })[0]).toHaveAttribute('src', props.posts[0].cover);
     });
 
+    it('should not render posts', () => {
+        render(<Posts />);
+        expect(screen.queryByRole('heading', { name: /title/i })).not.toBeInTheDocument();
+    });
+
     it('should match snapshot', () => {
         const {container} = render(<Posts {...props}/>);
         expect(container.firstChild).toMatchSnapshot();
-    })
+    });
 
-    // it('should render the post content', () => {
-        
-    // });
+    
 
     // it('should render the post author', () => {
         
