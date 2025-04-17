@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 describe('<Button/>', () => {
     it('should render the button with the text', () => {
-        render(<Button text="Carregar mais posts"/>);
+        render(<Button text="Carregar mais posts" />);
         expect.assertions(1);
 
         const button = screen.getByRole('button', { name: /Carregar mais posts/i });
@@ -13,7 +13,7 @@ describe('<Button/>', () => {
 
     it('should call function on button click', () => {
         const fn = jest.fn();
-        render(<Button text="Carregar mais posts" onClick={fn}/>);
+        render(<Button text="Carregar mais posts" onClick={fn} />);
 
         const button = screen.getByRole('button', { name: /Carregar mais posts/i });
 
@@ -23,10 +23,16 @@ describe('<Button/>', () => {
     });
 
     it('should be disable when disable is true', () => {
-        render(<Button text="Carregar mais posts" disable={true}/>);
+        render(<Button text="Carregar mais posts" disable={true} />);
 
         const button = screen.getByRole('button', { name: /Carregar mais posts/i });
 
         expect(button).toBeDisabled();
     });
+
+    it('should match snapshot', () => {
+        const { container } = render(<Button text="Carregar mais posts" disable={true} />);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
 });
