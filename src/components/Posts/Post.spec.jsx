@@ -37,14 +37,4 @@ describe('<Posts />', () => {
         const {container} = render(<Posts {...props}/>);
         expect(container.firstChild).toMatchSnapshot();
     });
-
-    
-
-    // it('should render the post author', () => {
-        
-    // });
-
-    // it('should render the post date', () => {
-        
-    // });
 });
